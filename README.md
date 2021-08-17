@@ -1,51 +1,36 @@
-## Developer Portfolio Landing Page Template
+## Portfolio Site (Using Github Pages)
 
-### Introduction
+This site functions as a portfolio of work and a small web side project.  This README should outline how to build and maintain the site locally.  New trunk builds will be published to github pages automatically.
 
-Use this template if you need a quick developer / data science portfolio! Based on a Minimal Jekyll theme for GitHub Pages.
+### Local Setup
 
-<img src="images/demo.gif?raw=true"/>
+#### Notes on local builds
 
-### Installation
+Github pages uses a slightly modified version of [jekyll](https://jekyllrb.com/).  Some things that work with github pages do *not* work with Jekyll locally.  Note that every page you want to add to the local build *must* have a [YAML front matter](https://jekyllrb.com/docs/front-matter/).  If a page doesn't have any variables to set, you must still add the front matter in the following format for the page to build correctly:
 
-See full step by step tutorial [on Medium](https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd).
-___
-
-You can use the editor on GitHub to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```yaml
+---
+---
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### Dependencies
 
-### Roadmap
+You'll need the following installed to build locally:
+* [Task](https://github.com/go-task/task) - a make replacement with friendlier syntax
+* [Ruby](https://www.ruby-lang.org/en/) -A dynamic, open source programming language with a focus on simplicity and productivity
+* [Jekyll](https://jekyllrb.com/) - a static site generator written in ruby
+* [Bundle](https://bundler.io/) - a ruby dependency installer
+* Gems for github pages and any themes you use with your site. These should be specified in a `Gemfile`
 
-See the [open issues](https://github.com/evanca/quick-portfolio/issues) for a list of proposed features (and known issues).
-___
+#### Install and build
 
-### References
+Once you have the dependencies above installed, you can:
 
-[1] Jekyll theme "Minimal" for GitHub Pages: https://github.com/pages-themes/minimal (CC0 1.0 Universal License)
-<br>[2] Dummy photo via: https://pixabay.com/photos/man-male-adult-person-caucasian-1209494/ (Pixabay License)
-<br>[3] Dummy thumbnail image created by rawpixel.com: https://www.freepik.com/free-vector/set-elements-infographic_2807573.htm (Standard Freepik License)
+```bash
+task install
+task serve
+```
+
+This will install the required gems from the Gemfile and generate any static assets. Once done, you'll be able to view the locally built site on `http://localhost:4000`
+
+```
