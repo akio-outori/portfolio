@@ -1,0 +1,22 @@
+---
+
+version: "3"
+
+tasks:
+
+  install:
+    cmds:
+      - bundle install
+
+  update:
+    cmds:
+      - bundle update
+
+  update-clean:
+    cmds:
+      - rm Gemfile.lock
+      - bundle update
+
+  serve:
+    cmds:
+      - bundle exec jekyll serve
